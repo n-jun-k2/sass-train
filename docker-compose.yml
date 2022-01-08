@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  node:
+    build:
+      context: .
+      dockerfile: ./docker/node/Dockerfile
+    tty: true
+    volumes:
+      - ./frontend:/app/src
+      - node_modules_store:/app/src/node_modules
+
+volumes:
+  node_modules_store:
